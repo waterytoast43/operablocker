@@ -1,4 +1,4 @@
-## THE EXE CURRENTLY DOES NOT SEND NOTIFICATIONS (but blocks opera) I AM WORKING ON IT WAIT FOR V2
+## THE EXE CURRENTLY DOES NOT SEND NOTIFICATIONS (but blocks opera) I AM WORKING ON IT WAIT FOR V3
 
 # Opera Blocker
 
@@ -10,6 +10,7 @@ Opera Blocker is a Python application that monitors your Downloads folder for op
 - Auto-deletes that annoying spyware opera
 - User-friendly GUI with a toggle button to start and stop monitoring.
 - Notifications for actions taken on files.
+- Autodetcts the opera and operagx files and deletes them.
 
 ## Requirements
 
