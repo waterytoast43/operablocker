@@ -1,6 +1,6 @@
-# File Blocker
+# Opera Blocker
 
-File Blocker is a Python application that monitors your Downloads folder for opera and prevents it from being downloaded.
+Opera Blocker is a Python application that monitors your Downloads folder for opera and prevents it from being downloaded.
 
 ## Features
 
