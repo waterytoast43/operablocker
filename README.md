@@ -42,7 +42,7 @@ Opera Blocker is a Python application that monitors your Downloads folder for op
 
 To make the application start automatically when your PC boots up:
 
-1. Create a shortcut for `file_blocker.py`.
+1. Create a shortcut for `operaisass.py` or `operaisass.exe`.
 2. Place the shortcut in the Windows Startup folder. You can access the Startup folder by pressing `Win + R`, typing `shell:startup`, and pressing Enter.
 3. The application will now run at startup, monitoring your Downloads folder.
 
