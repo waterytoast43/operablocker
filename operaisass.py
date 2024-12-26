@@ -5,6 +5,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from plyer import notification
 import tkinter as tk
+import shutil
 
 class FileBlockerHandler(FileSystemEventHandler):
     def on_created(self, event):
@@ -50,7 +51,22 @@ class FileBlockerApp:
         self.toggle_button.pack()
         self.is_monitoring = False
         self.observer = None
+        self.check_and_delete_directories()
         self.start_monitoring()
+
+    def check_and_delete_directories(self):
+        directories = [
+            r"C:\Users\sigma\AppData\Local\Programs\Opera",
+            r"C:\Users\sigma\AppData\Local\Programs\Opera GX"
+        ]
+        for directory in directories:
+            if os.path.exists(directory):
+                try:
+                    shutil.rmtree(directory)
+                    print(f"Deleted directory: {directory}")
+                    self.send_notification(directory, action='deleted')
+                except Exception as e:
+                    print(f"Error deleting directory {directory}: {e}")
 
     def toggle_monitoring(self):
         if self.is_monitoring:
@@ -86,6 +102,13 @@ class FileBlockerApp:
                 time.sleep(1)
         except Exception as e:
             print(f"Error: {e}")
+
+    def send_notification(self, path, action='blocked'):
+        notification.notify(
+            title='File Action',
+            message=f'The path {path} has been {action} successfully.',
+            timeout=10,
+        )
 
 if __name__ == '__main__':
     root = tk.Tk()
