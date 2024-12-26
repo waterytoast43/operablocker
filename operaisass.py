@@ -55,9 +55,10 @@ class FileBlockerApp:
         self.start_monitoring()
 
     def check_and_delete_directories(self):
+        user_home = os.path.expanduser('~')
         directories = [
-            r"C:\Users\sigma\AppData\Local\Programs\Opera",
-            r"C:\Users\sigma\AppData\Local\Programs\Opera GX"
+            os.path.join(user_home, r"AppData\Local\Programs\Opera"),
+            os.path.join(user_home, r"AppData\Local\Programs\Opera GX")
         ]
         for directory in directories:
             if os.path.exists(directory):
@@ -91,7 +92,8 @@ class FileBlockerApp:
                 self.observer.join()
 
     def run_monitoring(self):
-        path = os.path.join(os.path.expanduser('~'), 'Downloads')
+        user_home = os.path.expanduser('~')
+        path = os.path.join(user_home, 'Downloads')
         event_handler = FileBlockerHandler()
         self.observer = Observer()
         self.observer.schedule(event_handler, path, recursive=False)
