@@ -1,3 +1,5 @@
+#THE EXE CURRENTLY DOES NOT SEND NOTIFICATIONS AND HAS ISSUES BLOCKING OPERAGX I AM WORKING ON IT WAIT FOR V2
+
 # Opera Blocker
 
 Opera Blocker is a Python application that monitors your Downloads folder for opera and prevents it from being downloaded.
